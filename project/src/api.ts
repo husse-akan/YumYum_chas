@@ -4,10 +4,8 @@ import { Order, Receipt } from "./models/types";
 
 const BASE_URL = "https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com";
 
-// API key'i bir kez alıp saklamak için bir değişken
 let apiKey: string | null = null;
 
-// Tenant ID'yi sabit bir değer olarak tanımlıyoruz
 const tenantId: string = "cbfa"; //name of your tenant
 
 /**

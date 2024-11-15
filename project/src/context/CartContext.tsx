@@ -1,9 +1,8 @@
 // project/src/context/CartContext.tsx
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { MenuItem } from '../models/types';
+import React, { createContext, useContext, useState, ReactNode } from "react";
+import { MenuItem } from "../models/types";
 
-// Sepet durumunu ve ekleme/çıkarma işlemlerini tanımlıyoruz
 type CartContextType = {
   cartItems: MenuItem[];
   addToCart: (item: MenuItem) => void;
@@ -12,7 +11,9 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const CartProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [cartItems, setCartItems] = useState<MenuItem[]>([]);
 
   const addToCart = (item: MenuItem) => {
@@ -30,7 +31,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   );
 };
 
-// CartContext'i kullanmak için yardımcı bir hook oluşturuyoruz
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
